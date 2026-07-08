@@ -1,9 +1,9 @@
 package com.hilcoe.MiniCloud.entity;
-import jakarta.persistence.*;
+import jakarta.persistence.*; 
 
 @Entity
 @Table(name="user_roles")
-public class UserRole {
+public class UserRole extends BaseEntity {
 
     @EmbeddedId
     private UserRoleId id;

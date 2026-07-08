@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "buckets")
-public class Bucket {
+public class Bucket extends BaseEntity {
 
     @Id
     @GeneratedValue

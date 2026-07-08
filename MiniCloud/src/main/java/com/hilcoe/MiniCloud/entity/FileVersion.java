@@ -5,7 +5,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "file_versions")
-public class FileVersion {
+public class FileVersion extends BaseEntity {
 
     @Id
     @GeneratedValue
