@@ -1,6 +1,9 @@
 package com.hilcoe.MiniCloud.entity;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -27,64 +30,106 @@ public class FileVersion extends BaseEntity {
 
     @Column(name = "etag")
     private String etag;
-
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) 
+    private User editedBy;
+     
     public FileVersion() {
     }
 
-    public FileVersion(Integer versionNumber, Long sizeBytes,
-                       String storagePath, String etag) {
-        this.versionNumber = versionNumber;
-        this.sizeBytes = sizeBytes;
-        this.storagePath = storagePath;
-        this.etag = etag;
-    }
+	public FileVersion(UUID versionId, File file, Integer versionNumber, Long sizeBytes, String storagePath,
+			String etag, User editedBy) {
+		super();
+		this.versionId = versionId;
+		this.file = file;
+		this.versionNumber = versionNumber;
+		this.sizeBytes = sizeBytes;
+		this.storagePath = storagePath;
+		this.etag = etag;
+		this.editedBy = editedBy;
+	}
 
     public UUID getVersionId() {
-        return versionId;
-    }
+		return versionId;
+	}
 
-    public void setVersionId(UUID versionId) {
-        this.versionId = versionId;
-    }
 
-    public File getFile() {
-        return file;
-    }
 
-    public void setFile(File file) {
-        this.file = file;
-    }
+	public void setVersionId(UUID versionId) {
+		this.versionId = versionId;
+	}
 
-    public Integer getVersionNumber() {
-        return versionNumber;
-    }
 
-    public void setVersionNumber(Integer versionNumber) {
-        this.versionNumber = versionNumber;
-    }
 
-    public Long getSizeBytes() {
-        return sizeBytes;
-    }
+	public File getFile() {
+		return file;
+	}
 
-    public void setSizeBytes(Long sizeBytes) {
-        this.sizeBytes = sizeBytes;
-    }
 
-    public String getStoragePath() {
-        return storagePath;
-    }
 
-    public void setStoragePath(String storagePath) {
-        this.storagePath = storagePath;
-    }
+	public void setFile(File file) {
+		this.file = file;
+	}
 
-    public String getEtag() {
-        return etag;
-    }
 
-    public void setEtag(String etag) {
-        this.etag = etag;
-    }
+
+	public Integer getVersionNumber() {
+		return versionNumber;
+	}
+
+
+
+	public void setVersionNumber(Integer versionNumber) {
+		this.versionNumber = versionNumber;
+	}
+
+
+
+	public Long getSizeBytes() {
+		return sizeBytes;
+	}
+
+
+
+	public void setSizeBytes(Long sizeBytes) {
+		this.sizeBytes = sizeBytes;
+	}
+
+
+
+	public String getStoragePath() {
+		return storagePath;
+	}
+
+
+
+	public void setStoragePath(String storagePath) {
+		this.storagePath = storagePath;
+	}
+
+
+
+	public String getEtag() {
+		return etag;
+	}
+
+
+
+	public void setEtag(String etag) {
+		this.etag = etag;
+	}
+
+
+
+	public User getEditedBy() {
+		return editedBy;
+	}
+
+
+	public void setEditedBy(User editedBy) {
+		this.editedBy = editedBy;
+	}
+
+    
 }
 
