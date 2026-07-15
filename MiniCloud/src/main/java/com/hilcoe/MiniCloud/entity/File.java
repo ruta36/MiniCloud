@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "files")
-public class File {
+public class File extends BaseEntity {
 
     @Id
     @GeneratedValue

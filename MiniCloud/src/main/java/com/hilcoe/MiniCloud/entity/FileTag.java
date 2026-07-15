@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "file_tags")
-public class FileTag {
+public class FileTag extends BaseEntity {
 
     @EmbeddedId
     private FileTagId id;
