@@ -25,9 +25,8 @@ public class StorageUsage {
     public StorageUsage() {
     }
 
-    public StorageUsage(User user,
-                        Long totalBytesUsed,
-                        LocalDateTime recordedAt) {
+    public StorageUsage(User user,Long totalBytesUsed,LocalDateTime recordedAt) 
+    {
         this.user = user;
         this.totalBytesUsed = totalBytesUsed;
         this.recordedAt = recordedAt;
