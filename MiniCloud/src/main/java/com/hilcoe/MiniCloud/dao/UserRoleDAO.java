@@ -1,16 +1,17 @@
 package com.hilcoe.MiniCloud.dao;
 
 import java.util.List;
+import java.util.UUID;
 
 import com.hilcoe.MiniCloud.entity.Role;
 
 public interface UserRoleDAO {
 	
-	Role createRole(Role role);
-	Role getRole(Integer id);
-	List<Role> getRoles();
-	Role updateRole(Role role);
-	void deleteRole(Integer id);
+	void assignRole(UUID userId, Integer roleId);
+
+	void removeRole(UUID userId, Integer roleId);
+
+	List<Role> getUserRoles(UUID userId);
 
 
 }

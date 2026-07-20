@@ -6,12 +6,11 @@ import java.util.UUID;
 import com.hilcoe.MiniCloud.entity.BucketAccess;
 
 public interface BucketAccessDAO {
-	
-	void grantAccess(UUID bucketId,UUID userId,String permission);
 
-	void revokeAccess(UUID bucketId,UUID userId);
+	void grantAccess(UUID bucketId, UUID userId, String permission);
+
+	void revokeAccess(UUID bucketId, UUID userId);
 
 	List<BucketAccess> getUsers(UUID bucketId);
-
 
 }
