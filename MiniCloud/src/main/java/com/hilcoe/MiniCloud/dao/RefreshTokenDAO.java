@@ -7,13 +7,12 @@ import com.hilcoe.MiniCloud.entity.User;
 
 public interface RefreshTokenDAO {
 	
-	RefreshToken createToken(User user);
+	RefreshToken createToken(RefreshToken refereshToken);
 
 	RefreshToken findToken(String hash);
 
 	void deleteToken(UUID id);
 
-	boolean validateToken(String token);
 
 
 }

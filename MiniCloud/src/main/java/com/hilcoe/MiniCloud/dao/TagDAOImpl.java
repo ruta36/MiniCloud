@@ -2,8 +2,14 @@ package com.hilcoe.MiniCloud.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.hilcoe.MiniCloud.entity.Tag;
 
+import jakarta.transaction.Transactional;
+
+@Repository
+@Transactional
 public class TagDAOImpl implements TagDAO{
 
 	@Override

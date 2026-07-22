@@ -31,7 +31,8 @@ public class FileVersion extends BaseEntity {
     @Column(name = "etag")
     private String etag;
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) 
+    @ManyToOne
+    @JoinColumn(name="edited_by")
     private User editedBy;
      
     public FileVersion() {

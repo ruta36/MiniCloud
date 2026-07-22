@@ -3,8 +3,14 @@ package com.hilcoe.MiniCloud.dao;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
+
 import com.hilcoe.MiniCloud.entity.BucketAccess;
 
+import jakarta.transaction.Transactional;
+
+@Repository
+@Transactional
 public class BucketAccessDAOImpl implements BucketAccessDAO{
 
 	@Override

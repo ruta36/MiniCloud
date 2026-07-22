@@ -10,6 +10,6 @@ public interface RoleDAO {
 	List<Role> getRoles();
 	Role updateRole(Role role);
 	void deleteRole(Integer id);
-
-
+	Role findByName(String roleName);
+	
 }

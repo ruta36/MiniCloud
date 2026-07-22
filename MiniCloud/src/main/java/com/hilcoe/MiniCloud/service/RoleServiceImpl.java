@@ -2,9 +2,16 @@ package com.hilcoe.MiniCloud.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import com.hilcoe.MiniCloud.dao.RoleDAO;
 import com.hilcoe.MiniCloud.entity.Role;
 
+@Service
 public class RoleServiceImpl implements RoleService{
+	
+	private RoleDAO roleDao;
+	
 
 	@Override
 	public Role createRole(Role role) {
@@ -20,8 +27,8 @@ public class RoleServiceImpl implements RoleService{
 
 	@Override
 	public List<Role> getAllRoles() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Role> roles = roleDao.getRoles();
+		return roles;
 	}
 
 	@Override

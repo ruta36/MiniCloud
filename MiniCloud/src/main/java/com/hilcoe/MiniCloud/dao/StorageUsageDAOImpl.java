@@ -2,8 +2,14 @@ package com.hilcoe.MiniCloud.dao;
 
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
+
 import com.hilcoe.MiniCloud.entity.StorageUsage;
 
+import jakarta.transaction.Transactional;
+
+@Repository
+@Transactional
 public class StorageUsageDAOImpl implements StorageUsageDAO{
 
 	@Override

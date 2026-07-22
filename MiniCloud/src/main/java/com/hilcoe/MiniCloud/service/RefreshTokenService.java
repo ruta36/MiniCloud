@@ -6,9 +6,9 @@ import com.hilcoe.MiniCloud.entity.RefreshToken;
 import com.hilcoe.MiniCloud.entity.User;
 
 public interface RefreshTokenService {
-	RefreshToken generateRefreshToken(User user);
+	String generateRefreshToken(User user);
 
-	RefreshToken getRefreshToken(String hash);
+	String getRefreshToken(String hash);
 
 	boolean validateRefreshToken(String token);
 

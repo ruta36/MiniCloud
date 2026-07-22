@@ -13,7 +13,10 @@ public class User extends BaseEntity {
     private UUID userId;
 
     @Column(unique = true)
-    private String username;
+    private String userName;
+    
+    @Column(name="full_name")
+    private String fullName;
 
     @Column(unique = true)
     private String email;
@@ -44,11 +47,15 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy="user",cascade=CascadeType.ALL)
     private List<BucketAccess> bucketAccesses=new ArrayList<>();
+    
+    @OneToMany(mappedBy = "editedBy")
+    private List<FileVersion> editedVersions = new ArrayList<>();
 
     public User(){}
 
-    public User(String username,String email,String passwordHash,Long storageQuotaBytes){
-        this.username=username;
+    public User(String fullName, String userName,String email,String passwordHash,Long storageQuotaBytes){
+        this.userName=userName;
+        this.fullName=fullName;
         this.email=email;
         this.passwordHash=passwordHash;
         this.storageQuotaBytes=storageQuotaBytes;
@@ -61,13 +68,21 @@ public class User extends BaseEntity {
     public void setUserId(UUID userId) {
         this.userId=userId;
     }
-
-    public String getUsername() {
-        return username;
+    
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUsername(String username){
-        this.username=username;
+    public void setFullName(String fullName) {
+        this.fullName=fullName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName){
+        this.userName=userName;
     }
 
     public String getEmail(){
